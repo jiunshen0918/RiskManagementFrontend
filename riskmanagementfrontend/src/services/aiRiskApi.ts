@@ -1,4 +1,4 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+import { apiFetch } from './apiAuth'
 
 export interface RiskAnalysisRequest {
   description: string
@@ -36,7 +36,7 @@ export interface RiskAnalysisResponse {
 export async function analyzeRisk(input: RiskAnalysisRequest): Promise<RiskAnalysisResponse> {
   let response: Response
   try {
-    response = await fetch(`${API_BASE_URL}/api/v1/ai/analyze-risk`, {
+    response = await apiFetch('/api/v1/ai/analyze-risk', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(input),
