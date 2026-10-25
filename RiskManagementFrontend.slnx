@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="RiskManagementFrontend/riskmanagementfrontend.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
